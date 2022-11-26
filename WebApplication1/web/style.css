@@ -1,0 +1,57 @@
+
+/*
+*{
+    border:1px solid black;
+}
+.itemcard {
+    border:1px solid black;
+}*/
+
+/**{
+    margin:0 auto;
+    text-align: center;
+}*/
+
+:root {
+    --background-color: #242121;
+    --background-color2: #292828;
+    --text-color: #FFFFFF;
+    --text-color2: #E7E2E2;
+    --color-accent1: #0DCAF0;
+    --color-accent2: #FFC107;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+.card-text{
+    color:black;
+}
+
+footer{
+    text-align: center;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* HIDE Button */
+[type=button]{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.hidden-btn {
+    background: transparent;
+    border: none !important;
+    font-size:0;
+}
+/**/
