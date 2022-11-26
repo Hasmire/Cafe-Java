@@ -13,7 +13,7 @@
             <!--<span class="title-subtitle">Java</span>-->
         <div class="navbar-nav ms-auto right-nav flex-row">
             <!--<a href="./index.jsp" class="btn btn-outline-info me-4 active">Fiction</a>-->
-            <a href="./index2.jsp" class="btn btn-outline-success">Cart</a>
+            <a href="Cart.jsp" class="btn btn-outline-success">Cart</a>
         </div>
     </div>
 </nav>

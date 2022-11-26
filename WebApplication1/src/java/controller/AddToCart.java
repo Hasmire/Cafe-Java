@@ -1,9 +1,13 @@
-
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,31 +15,37 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Item;
 
-public class ViewItem extends HttpServlet {
-
+public class AddToCart extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String s = request.getParameter("item_id");
-            int item_ID;
-            if (s != null) {
-                item_ID = Integer.parseInt(s);
-                //Construct item object using item id
-                Item item = new Item(item_ID);
+        try (PrintWriter out = response.getWriter()) {  
 
-                //pass item object to view.jsp, so it can be displayed
-                request.setAttribute("Item", item);
-                RequestDispatcher view
-                        = request.getRequestDispatcher("view-item.jsp");
-                view.include(request, response);
-            } else { 
-                RequestDispatcher view
-                        = request.getRequestDispatcher("/error.jsp");
-                view.forward(request, response);
-            }
+        //Create Item object from User request
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        int id = Integer.parseInt(request.getParameter("item_id"));
+        Item item = new Item(id);
+        item.setQuantity(quantity);
+
+        //Retrieve Cart items from session and add item to it
+        ArrayList<Item> itemList = new ArrayList<>();
+        HttpSession session = request.getSession();
+        ArrayList<Item> existingList = (ArrayList<Item>) session.getAttribute("CartList");
+
+            if (existingList == null) {
+                itemList.add(item);
+                session.setAttribute("CartList", itemList);
+                response.sendRedirect("menu.jsp");
+            } else {
+                //TODO: Prevent duplicates
+                itemList = existingList;
+                itemList.add(item);
+                response.sendRedirect("menu.jsp");
+                }
+            out.println(id);
+            } 
         }
-    }
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -77,3 +87,4 @@ public class ViewItem extends HttpServlet {
     }// </editor-fold>
 
 }
+

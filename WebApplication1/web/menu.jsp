@@ -16,8 +16,9 @@
     </head>
     <body>
         <%@include file="components/navbar.jsp"%>
-        <h1 class="text-center">Menu Page</h1>
         
+        <h1 class="text-center">Menu Page</h1>
+            <!--display all menu items-->
             <div class="container d-flex justify-content-center align-items-center flex-column">
                 
                 <!--item 1 - French Vanilla-->
