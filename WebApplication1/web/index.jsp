@@ -8,10 +8,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cafe Java</title>
+        <%@include file="components/head.jsp"%>
     </head>
     <body>
-        <h1>Hello World! asd</h1>
+        
+     
+
+        <%@include file="components/navbar.jsp"%>
+        <h1 class="text-center">Add Home Page Here</h1>
+        <a class="text-center" href="menu.jsp">View Our Products</a>
+        
+        <%@include file="components/footer.jsp"%>
     </body>
 </html>
