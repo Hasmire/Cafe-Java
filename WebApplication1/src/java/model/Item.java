@@ -3,12 +3,12 @@ package model;
 
 //Item Database
 public class Item {
-private final int ITEM1_PRICE = 100;
-private final int ITEM2_PRICE = 100;
-private final int ITEM3_PRICE = 100;
-private final int ITEM4_PRICE = 100;
-private final int ITEM6_PRICE = 100;
-private final int ITEM5_PRICE = 100;
+private final int ITEM1_PRICE = 150;
+private final int ITEM2_PRICE = 150;
+private final int ITEM3_PRICE = 150;
+private final int ITEM4_PRICE = 150;
+private final int ITEM6_PRICE = 150;
+private final int ITEM5_PRICE = 150;
 
 
 private int id;
