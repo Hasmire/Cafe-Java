@@ -18,14 +18,12 @@
         <%@include file="components/navbar.jsp"%>
         <h1 class="text-center">Menu Page</h1>
         
-        <form method="GET" action="viewItem">
             <div class="container d-flex justify-content-center align-items-center flex-column">
                 
                 <!--item 1 - French Vanilla-->
                 <div class="row mb-3 ">           
                     <div class="col">
-                        <label>
-                            <button class="hidden-btn" type="submit" name="item_id" value="1">
+                        <a href="viewItem?item_id=1">
                             <div class="card" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -39,15 +37,14 @@
                                     </div>
                                 </div>
                             </div>
-                            </button>
+                        </a>
                         </label>  
                     </div>       
                 
                 
                     <!--item 2 - Caramel Macchiato-->
                     <div class="col">
-                        <label>
-                            <button class="hidden-btn" type="submit" name="item_id" value="2">
+                        <a href="viewItem?item_id=2">
                             <div class="card" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -61,15 +58,14 @@
                                     </div>
                                 </div>
                             </div>
-                            </button>
+                        </a>
                         </label>  
-                    </div>       
+                    </div>  
                 
                 
                 <!--item 3 - pumpkin spice-->        
                     <div class="col">
-                        <label>
-                            <button class="hidden-btn" type="submit" name="item_id" value="3">
+                        <a href="viewItem?item_id=3">
                             <div class="card" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -83,17 +79,16 @@
                                     </div>
                                 </div>
                             </div>
-                            </button>
+                        </a>
                         </label>  
-                    </div> 
+                    </div>  
                 <!--row end-->
                 </div>
                 
                 <!--item 4 - Hazelnut-->  
                 <div class="row mb-3 ">           
                     <div class="col">
-                        <label>
-                            <button class="hidden-btn" type="submit" name="item_id" value="4">
+                        <a href="viewItem?item_id=4">
                             <div class="card" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -107,14 +102,13 @@
                                     </div>
                                 </div>
                             </div>
-                            </button>
+                        </a>
                         </label>  
-                    </div>       
+                    </div>  
                 
                 <!--item 5 - Mocha-->           
                     <div class="col">
-                        <label>
-                            <button class="hidden-btn" type="submit" name="item_id" value="5">
+                        <a href="viewItem?item_id=5">
                             <div class="card" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -128,14 +122,13 @@
                                     </div>
                                 </div>
                             </div>
-                            </button>
+                        </a>
                         </label>  
-                    </div>       
+                    </div>         
                 
                 <!--item 6 - Matcha-->        
                     <div class="col">
-                        <label>
-                            <button class="hidden-btn" type="submit" name="item_id" value="6">
+                        <a href="viewItem?item_id=6">
                             <div class="card" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
@@ -149,15 +142,14 @@
                                     </div>
                                 </div>
                             </div>
-                            </button>
+                        </a>
                         </label>  
-                    </div>
+                    </div>  
                 <!--row end-->
                 </div> 
                 
                 
             </div>
-        </form>
         
         <%@include file="components/footer.jsp"%>
         

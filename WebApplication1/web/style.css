@@ -1,17 +1,3 @@
-
-/*
-*{
-    border:1px solid black;
-}
-.itemcard {
-    border:1px solid black;
-}*/
-
-/**{
-    margin:0 auto;
-    text-align: center;
-}*/
-
 :root {
     --background-color: #242121;
     --background-color2: #292828;
@@ -30,7 +16,7 @@ body {
     justify-content: space-between;
 }
 
-.card-text{
+.card-text, .card-title{
     color:black;
 }
 
@@ -42,16 +28,3 @@ a {
   text-decoration: none;
 }
 
-/* HIDE Button */
-[type=button]{
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-.hidden-btn {
-    background: transparent;
-    border: none !important;
-    font-size:0;
-}
-/**/
