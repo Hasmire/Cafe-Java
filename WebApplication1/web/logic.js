@@ -2,6 +2,8 @@ $(document).ready(function () {
     $("#header").load("./components/header.html");
     $("#header-auth").load("./components/header-auth.html");
     $("#footer").load("./components/footer.html");
+    $("#navbar").load("./components/navbar.html");
+    $("#navbar-auth").load("./components/navbar-auth.html");
 
     $('[data-quantity="plus"]').click(function (e) {
         e.preventDefault();
