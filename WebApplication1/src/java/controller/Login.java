@@ -62,8 +62,9 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         HashMap<String, String> map = new HashMap<>();
         
-        //get file path using properties
-        File txt = new File("C:\\Users\\Lance\\Documents\\NetBeansProjects\\MP4_ICS2608\\WebApplication1\\web\\userList.txt");
+        String contextPath = request.getContextPath() + "/userList.txt";
+        
+        File txt = new File(contextPath);
         
         Scanner scan = new Scanner(txt);
         
