@@ -5,15 +5,33 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<nav class="navbar sticky-top p-2">
+<nav class="navbar sticky-top navbar-expand-lg p-3 mb-3">
     <div class="container">
-        <!-- Title -->
-        <!--<i class="bi bi-book-half me-2"></i>-->
-        <span class="title">CafeJava</span>
-            <!--<span class="title-subtitle">Java</span>-->
-        <div class="navbar-nav ms-auto right-nav flex-row">
-            <!--<a href="./index.jsp" class="btn btn-outline-info me-4 active">Fiction</a>-->
-            <a href="Cart.jsp" class="btn btn-outline-success">Cart</a>
+        <!--Left Nav-->
+        <a href="./index.jsp">
+            <i class="fa-solid fa-mug-hot fa-3x me-2"></i>
+            <span class="nav-title">Cafe Java</span>
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!--Right Nav-->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div
+                class="navbar-nav ms-auto right-nav nav-auth d-flex justify-content-center align-items-center"
+                >
+                <a href="./menu.jsp" class="nav-a">Menu</a>
+                <a href="./Cart.jsp" class="nav-a">Cart</a>
+                <a href="./index.jsp" type="button" class="btn btn-primary">Logout</a>
+            </div>
         </div>
     </div>
 </nav>

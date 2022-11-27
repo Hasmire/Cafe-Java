@@ -1,8 +1,5 @@
+// Quantity Button Logic
 $(document).ready(function () {
-    $("#header").load("./components/header.html");
-    $("#header-auth").load("./components/header-auth.html");
-    $("#footer").load("./components/footer.html");
-
     $('[data-quantity="plus"]').click(function (e) {
         e.preventDefault();
         fieldName = $(this).attr("data-field");
@@ -13,7 +10,7 @@ $(document).ready(function () {
             $("input[name=" + fieldName + "]").val(0);
         }
     });
-    
+
     $('[data-quantity="minus"]').click(function (e) {
         e.preventDefault();
         fieldName = $(this).attr("data-field");

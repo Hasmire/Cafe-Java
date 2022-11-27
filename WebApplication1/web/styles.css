@@ -8,27 +8,34 @@
     --color-accent2: #468663;
 }
 
+/*Make Container flexbox*/
+
 body {
     font-family: "Red Hat Display", "Red Hat Mono", "Red Hat Text", sans-serif;
     background-color: var(--background-color);
-    color: var(--text-color);
     display: flex;
     flex-direction: column;
     height: 100vh;
     justify-content: space-between;
 }
 
-nav {
+nav,
+.footer {
     background-color: var(--nav-color);
+}
+
+.nav-title,
+a,
+body,
+nav a:hover {
+    color: var(--text-color);
 }
 
 a {
     text-decoration: none;
-    color: var(--text-color);
 }
 
 .nav-title {
-    color: var(--text-color);
     font-family: "Red Hat Display", sans-serif;
     font-weight: 800;
     font-size: 32px;
@@ -39,49 +46,54 @@ a {
     font-weight: 600;
 }
 
-.nav-auth a:hover {
+.nav-a:hover,
+.fa-mug-hot {
     color: var(--color-accent1);
 }
 
+.nav-a {
+    margin-right: 32px;
+}
+
+/*Changed btn-primary colors*/
 .btn-primary {
-    color: #fff;
+    color: var(--text-color);
     font-weight: 600;
     font-size: 20px;
     background-color: var(--color-accent1);
     border-color: var(--color-accent1);
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
 .btn-primary.active,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
 .open > .dropdown-toggle.btn-primary {
-    color: #fff;
+    color: var(--text-color);
     background-color: var(--color-accent2);
     border-color: var(--color-accent2);
 }
 
-nav a:hover {
-    color: var(--text-color);
-}
+/*Index*/
 
+.index-sub,
 .index-title {
     max-width: 600px;
-    font-size: 72px;
+    font-size: 60px;
     font-weight: 800;
 }
 
 .index-sub {
-    max-width: 600px;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
 }
 
 .index .btn-primary {
-    max-width: 380px;
-    font-size: 36px;
+    max-width: 280px;
+    font-size: 27px;
 }
 
+/*Background image of index*/
 .bg-img {
     min-height: 100%;
     min-width: 1024px;
@@ -94,6 +106,7 @@ nav a:hover {
     z-index: -1;
 }
 
+/*Menu*/
 .menu-title {
     font-size: 40px;
     font-weight: 800;
@@ -106,6 +119,7 @@ nav a:hover {
     color: var(--text-color2);
 }
 
+/*Item*/
 .item-card {
     background-color: var(--background-color2);
     border-radius: 20px;
@@ -113,14 +127,14 @@ nav a:hover {
 }
 
 .item-img {
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 0 0;
     max-height: 230px;
     object-fit: cover;
 }
 
 .item-title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .item-price {
@@ -129,6 +143,7 @@ nav a:hover {
     text-align: right;
 }
 
+/*Description*/
 .desc-card {
     background-color: var(--background-color2);
 }
@@ -159,30 +174,39 @@ nav a:hover {
     font-family: "Red Hat Text", sans-serif;
 }
 
+/*Quantity Button*/
+.input-group-field,
+.quant-btn {
+    background-color: var(--background-color);
+}
+
 .input-group-field {
     text-align: center;
-    background-color: var(--background-color);
     color: var(--color-accent1);
     border: 0;
     width: 80px;
 }
 
 .quant-btn {
-    background-color: var(--background-color);
-    color: var(--color-accent1);
     border-color: var(--color-accent2);
-    border-radius: 50%;
+    border-radius: 30%;
     font-size: 20px;
 }
 
+.quant-btn,
 .quant-icon {
     color: var(--color-accent1);
 }
 
-.input-group-field::-webkit-inner-spin-button,
-.input-group-field ::-webkit-outer-spin-button {
+.input-group-field ::-webkit-outer-spin-button,
+.input-group-field::-webkit-inner-spin-button {
     -webkit-appearance: none;
     appearance: none;
+}
+
+/*Cart*/
+.cart-checkout {
+    font-size: 25px;
 }
 
 .cart-img {
@@ -198,10 +222,12 @@ nav a:hover {
     font-size: 18px;
 }
 
-.cart-price, .cart-legend {
+.cart-legend,
+.cart-price {
     font-size: 24px;
 }
 
+/*Checkout*/
 .checkout-title {
     font-size: 40px;
     font-weight: 800;
@@ -212,22 +238,63 @@ nav a:hover {
     color: var(--color-accent1);
 }
 
+/*Smaller Screens*/
 @media screen and (max-width: 1024px) {
-    /* Specific to this particular image */
     .bg-img {
         left: 50%;
-        margin-left: -512px; /* 50% */
+        margin-left: -512px;
+    }
+
+    .nav-a {
+        margin-right: 0;
+        margin-bottom: 16px;
     }
 
     .index-title {
         font-size: 40px;
     }
 
+    .index .btn-primary,
     .index-sub {
         font-size: 20px;
     }
 
-    .index .btn-primary {
-        font-size: 20px;
+    .cart-img {
+        display: none;
+    }
+
+    .cart-title {
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+    .cart-subt {
+        font-size: 12px;
+    }
+
+    .cart-checkout,
+    .cart-legend,
+    .cart-price,
+    .cart-remove {
+        font-size: 15px;
+    }
+
+    .cart-quant {
+        max-width: 60px;
+    }
+
+    .cart-remove,
+    .cart-title {
+        margin-left: 0;
+    }
+
+    .quant-btn {
+        max-width: 40px;
+        font-size: 10px;
+    }
+
+    .desc-btn,
+    .desc-quant {
+        font-size: 18px;
     }
 }
