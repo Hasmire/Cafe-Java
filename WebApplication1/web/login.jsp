@@ -12,14 +12,14 @@
 
 <div class="center">
     <h1>Login</h1>
-    <form method="post">
+    <form action="Login">
         <div class="txt_field">
-            <input type="text" required>
+            <input type="text" name="uname" required>
             <span></span>
             <label>Username</label>
         </div>
         <div class="txt_field">
-            <input type="password" required>
+            <input type="password" name="pass" required>
             <span></span>
             <label>Password</label>
         </div>
