@@ -1,3 +1,4 @@
+// Quantity Button Logic
 $(document).ready(function () {
     $('[data-quantity="plus"]').click(function (e) {
         e.preventDefault();
@@ -9,7 +10,7 @@ $(document).ready(function () {
             $("input[name=" + fieldName + "]").val(0);
         }
     });
-    
+
     $('[data-quantity="minus"]').click(function (e) {
         e.preventDefault();
         fieldName = $(this).attr("data-field");

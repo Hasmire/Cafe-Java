@@ -8,6 +8,8 @@
     --color-accent2: #468663;
 }
 
+/*Make Container flexbox*/
+
 body {
     font-family: "Red Hat Display", "Red Hat Mono", "Red Hat Text", sans-serif;
     background-color: var(--background-color);
@@ -17,13 +19,15 @@ body {
     justify-content: space-between;
 }
 
-nav {
+nav,
+.footer {
     background-color: var(--nav-color);
 }
 
 .nav-title,
 a,
-body {
+body,
+nav a:hover {
     color: var(--text-color);
 }
 
@@ -42,16 +46,18 @@ a {
     font-weight: 600;
 }
 
-.nav-auth a:hover {
+.nav-a:hover,
+.fa-mug-hot {
     color: var(--color-accent1);
 }
 
-.footer {
-    background-color: var(--nav-color);
+.nav-a {
+    margin-right: 32px;
 }
 
+/*Changed btn-primary colors*/
 .btn-primary {
-    color: #fff;
+    color: var(--text-color);
     font-weight: 600;
     font-size: 20px;
     background-color: var(--color-accent1);
@@ -63,18 +69,12 @@ a {
 .btn-primary:focus,
 .btn-primary:hover,
 .open > .dropdown-toggle.btn-primary {
-    color: #fff;
+    color: var(--text-color);
     background-color: var(--color-accent2);
     border-color: var(--color-accent2);
 }
 
-nav a:hover {
-    color: var(--text-color);
-}
-
-.nav-a {
-    margin-right: 32px;
-}
+/*Index*/
 
 .index-sub,
 .index-title {
@@ -93,6 +93,7 @@ nav a:hover {
     font-size: 27px;
 }
 
+/*Background image of index*/
 .bg-img {
     min-height: 100%;
     min-width: 1024px;
@@ -105,6 +106,7 @@ nav a:hover {
     z-index: -1;
 }
 
+/*Menu*/
 .menu-title {
     font-size: 40px;
     font-weight: 800;
@@ -117,6 +119,7 @@ nav a:hover {
     color: var(--text-color2);
 }
 
+/*Item*/
 .item-card {
     background-color: var(--background-color2);
     border-radius: 20px;
@@ -140,6 +143,7 @@ nav a:hover {
     text-align: right;
 }
 
+/*Description*/
 .desc-card {
     background-color: var(--background-color2);
 }
@@ -170,6 +174,7 @@ nav a:hover {
     font-family: "Red Hat Text", sans-serif;
 }
 
+/*Quantity Button*/
 .input-group-field,
 .quant-btn {
     background-color: var(--background-color);
@@ -199,6 +204,7 @@ nav a:hover {
     appearance: none;
 }
 
+/*Cart*/
 .cart-checkout {
     font-size: 25px;
 }
@@ -221,6 +227,7 @@ nav a:hover {
     font-size: 24px;
 }
 
+/*Checkout*/
 .checkout-title {
     font-size: 40px;
     font-weight: 800;
@@ -231,6 +238,7 @@ nav a:hover {
     color: var(--color-accent1);
 }
 
+/*Smaller Screens*/
 @media screen and (max-width: 1024px) {
     .bg-img {
         left: 50%;
