@@ -12,7 +12,7 @@
 
 <div class="center">
     <h1>Login</h1>
-    <form action="Login">
+    <form action="Login" method="post">
         <div class="txt_field">
             <input type="text" name="uname" required>
             <span></span>
@@ -24,7 +24,7 @@
             <label>Password</label>
         </div>
 
-        <input type="submit" value="Login">
+        <input class="Login" type="submit" value="Login">
     </form>
 </div>
 

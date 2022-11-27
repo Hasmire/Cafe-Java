@@ -30,7 +30,9 @@
                 >
                 <a href="./menu.jsp" class="nav-a">Menu</a>
                 <a href="./Cart.jsp" class="nav-a">Cart</a>
-                <a href="./index.jsp" type="button" class="btn btn-primary">Logout</a>
+                <form action="Logout">
+                <Button type="submit" class="btn btn-primary" value="Logout">Logout</button>
+                </form>
             </div>
         </div>
     </div>
