@@ -11,28 +11,27 @@
 body {
     font-family: "Red Hat Display", "Red Hat Mono", "Red Hat Text", sans-serif;
     background-color: var(--background-color);
-    color: var(--text-color);
     display: flex;
     flex-direction: column;
     height: 100vh;
     justify-content: space-between;
 }
 
-* {
-    box-sizing: content-box;
-}
-
 nav {
     background-color: var(--nav-color);
 }
 
-a {
-    text-decoration: none;
+.nav-title,
+a,
+body {
     color: var(--text-color);
 }
 
+a {
+    text-decoration: none;
+}
+
 .nav-title {
-    color: var(--text-color);
     font-family: "Red Hat Display", sans-serif;
     font-weight: 800;
     font-size: 32px;
@@ -59,10 +58,10 @@ a {
     border-color: var(--color-accent1);
 }
 
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
 .btn-primary.active,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:hover,
 .open > .dropdown-toggle.btn-primary {
     color: #fff;
     background-color: var(--color-accent2);
@@ -77,21 +76,21 @@ nav a:hover {
     margin-right: 32px;
 }
 
+.index-sub,
 .index-title {
     max-width: 600px;
-    font-size: 72px;
+    font-size: 60px;
     font-weight: 800;
 }
 
 .index-sub {
-    max-width: 600px;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 600;
 }
 
 .index .btn-primary {
-    max-width: 380px;
-    font-size: 36px;
+    max-width: 280px;
+    font-size: 27px;
 }
 
 .bg-img {
@@ -125,14 +124,14 @@ nav a:hover {
 }
 
 .item-img {
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px 20px 0 0;
     max-height: 230px;
     object-fit: cover;
 }
 
 .item-title {
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 .item-price {
@@ -171,28 +170,31 @@ nav a:hover {
     font-family: "Red Hat Text", sans-serif;
 }
 
+.input-group-field,
+.quant-btn {
+    background-color: var(--background-color);
+}
+
 .input-group-field {
     text-align: center;
-    background-color: var(--background-color);
     color: var(--color-accent1);
     border: 0;
     width: 80px;
 }
 
 .quant-btn {
-    background-color: var(--background-color);
-    color: var(--color-accent1);
     border-color: var(--color-accent2);
     border-radius: 30%;
     font-size: 20px;
 }
 
+.quant-btn,
 .quant-icon {
     color: var(--color-accent1);
 }
 
-.input-group-field::-webkit-inner-spin-button,
-.input-group-field ::-webkit-outer-spin-button {
+.input-group-field ::-webkit-outer-spin-button,
+.input-group-field::-webkit-inner-spin-button {
     -webkit-appearance: none;
     appearance: none;
 }
@@ -214,7 +216,8 @@ nav a:hover {
     font-size: 18px;
 }
 
-.cart-price, .cart-legend {
+.cart-legend,
+.cart-price {
     font-size: 24px;
 }
 
@@ -229,26 +232,22 @@ nav a:hover {
 }
 
 @media screen and (max-width: 1024px) {
-    /* Specific to this particular image */
     .bg-img {
         left: 50%;
-        margin-left: -512px; /* 50% */
+        margin-left: -512px;
     }
 
     .nav-a {
-        margin-right: 0px;
+        margin-right: 0;
         margin-bottom: 16px;
     }
-    
+
     .index-title {
         font-size: 40px;
     }
 
+    .index .btn-primary,
     .index-sub {
-        font-size: 20px;
-    }
-
-    .index .btn-primary {
         font-size: 20px;
     }
 
@@ -260,21 +259,25 @@ nav a:hover {
         font-size: 15px;
         font-weight: 800;
     }
-    
+
     .cart-subt {
         font-size: 12px;
     }
-    
-    .cart-price, .cart-legend, .cart-remove, .cart-checkout {
+
+    .cart-checkout,
+    .cart-legend,
+    .cart-price,
+    .cart-remove {
         font-size: 15px;
     }
-    
+
     .cart-quant {
         max-width: 60px;
     }
 
-    .cart-remove, .cart-title {
-        margin-left: 0px;
+    .cart-remove,
+    .cart-title {
+        margin-left: 0;
     }
 
     .quant-btn {
@@ -282,7 +285,8 @@ nav a:hover {
         font-size: 10px;
     }
 
-    .desc-btn, .desc-quant {
+    .desc-btn,
+    .desc-quant {
         font-size: 18px;
     }
 }
