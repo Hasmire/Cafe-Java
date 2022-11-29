@@ -60,26 +60,11 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HashMap<String, String> map = new HashMap<>();
-        
-        String contextPath = request.getContextPath() + "/userList.txt";
-        
-        File txt = new File(contextPath);
-        
-        Scanner scan = new Scanner(txt);
         
         String uname = request.getParameter("uname");
         String pass = request.getParameter("pass");
-        
-        while (scan.hasNextLine()) {
-            String username = scan.nextLine();
-            String passw = scan.nextLine();
-            map.put(username, passw);
-        }
 
-        String passwordInFile = map.get(uname);
-
-        if (passwordInFile != null && passwordInFile.equals(pass)) {
+        if (uname.equals("user")&&pass.equals("pass1")) {
             HttpSession session = request.getSession();
             session.setAttribute("username", uname);
             response.sendRedirect("menu.jsp");
