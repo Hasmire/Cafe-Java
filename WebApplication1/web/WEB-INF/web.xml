@@ -20,6 +20,10 @@
         <servlet-name>CreateCart</servlet-name>
         <servlet-class>controller.CreateCart</servlet-class>
     </servlet>
+        <servlet>
+        <servlet-name>ClearCart</servlet-name>
+        <servlet-class>controller.ClearCart</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>Login</servlet-name>
         <servlet-class>Login</servlet-class>
