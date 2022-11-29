@@ -51,9 +51,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary desc-btn">Add to Cart</button>
                             </div>
-
                         </form>
-
                     </div>
                 </div>
             </div>

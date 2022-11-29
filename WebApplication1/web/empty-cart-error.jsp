@@ -12,6 +12,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Item Duplicate Error. <a href="Cart.jsp">Go to Cart</a></h1>
+        <h1>Empty Cart Error. <a href="Cart.jsp">Go to Cart</a></h1>
     </body>
 </html>
