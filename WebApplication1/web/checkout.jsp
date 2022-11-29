@@ -10,6 +10,16 @@
 
 <%@include file="components/navbar.jsp"%>
 
+<% 
+    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+
+%>
+
 <!--Checkout Form-->
 <div class="container">
     <div class="checkout-title text-center mb-2">Checkout</div>

@@ -9,6 +9,14 @@
 <%@include file="components/head.jsp"%>
 
 <%@include file="components/navbar.jsp"%>
+
+<!--session-->
+<% 
+    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
+%>
+
 <!--Title-->
 <div class="mt-0 mb-3">
     <div class="menu-title">Menu</div>

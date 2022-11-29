@@ -4,6 +4,16 @@
 
 <%@include file="components/navbar.jsp"%>
 
+<% 
+    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+
+%>
+
 <% //Retrieve item id from request
     Item item = (Item) request.getAttribute("Item");
     int id = item.getId();

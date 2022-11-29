@@ -8,6 +8,16 @@
 
 <%@include file="components/navbar.jsp"%>
 
+<% 
+    
+    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+    
+    if(session.getAttribute("username")==null){
+        response.sendRedirect("login.jsp");
+    }
+
+%>
+
 <!--Title-->
 <div class="menu-title mt-5 mb-5">Your cart items</div>
 
