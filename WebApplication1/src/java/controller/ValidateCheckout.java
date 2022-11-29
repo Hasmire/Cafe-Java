@@ -6,56 +6,56 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Item;
 
-public class AddToCart extends HttpServlet {
+/**
+ *
+ * @author Hasmire
+ */
+public class ValidateCheckout extends HttpServlet {
+
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {  
+        try ( PrintWriter out = response.getWriter()) {
+            HttpSession session = request.getSession();
 
-        //Create Item object from User request
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        int id = Integer.parseInt(request.getParameter("item_id"));
-        Item item = new Item(id);
-        item.setQuantity(quantity);
+            if (session.getAttribute("CartList") == null) {
+                response.sendRedirect("empty-cart-error.jsp");
+                return;
+            }
 
-        //Retrieve Cart items from session and add item to it
-        ArrayList<Item> itemList = new ArrayList<>();
-        HttpSession session = request.getSession();
-        ArrayList<Item> existingList = (ArrayList<Item>) session.getAttribute("CartList");
+            String[] values = request.getParameterValues("checkoutInfo");
+            boolean flag = false;
+            for (String x : values) {
+                if ("".equals(x)) {
+                    flag = true;
+                    break;
+                }
+            }
 
-            if (existingList == null) {
-                itemList.add(item);
-                session.setAttribute("CartList", itemList);
-                response.sendRedirect("menu.jsp");
+            if (flag) {
+                response.sendRedirect("insufficient-information-error.jsp");
+                return;
             } else {
-                //Allows duplicates
-                itemList = existingList;
-                boolean exist = false;
-                for(Item x : itemList){
-                    if(x.getId()==id){
-                        exist = true;
-                        x.setQuantity(x.getQuantity() + quantity);
-                        response.sendRedirect("menu.jsp");
-                    }
-                }
-                if(!exist){
-                    itemList.add(item);
-                    response.sendRedirect("menu.jsp");
-                }
-                
-                }
-            } 
+                response.sendRedirect("receipt.jsp");
+                return;
+            }
         }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -97,4 +97,3 @@ public class AddToCart extends HttpServlet {
     }// </editor-fold>
 
 }
-

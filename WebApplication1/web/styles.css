@@ -227,15 +227,9 @@ a {
     font-size: 24px;
 }
 
-/*Checkout*/
-.checkout-title {
-    font-size: 40px;
-    font-weight: 800;
-}
-
-.checkout-subt {
-    font-size: 30px;
-    color: var(--color-accent1);
+.cart-remove {
+    color: var(--text-color);
+    text-decoration: underline;
 }
 
 /*Login*/
@@ -318,6 +312,25 @@ form .txt_field{
 .Login:hover{
   border-color: var(--color-accent1);
   transition: .5s;
+
+/*Checkout*/
+.checkout-title {
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.checkout-subt {
+    font-size: 30px;
+    color: var(--color-accent1);
+}
+
+.checkout .form-control {
+    color: var(--background-color);
+}
+
+/*Receipt*/
+.receipt-card {
+    background-color: var(--background-color2);
 }
 
 /*Smaller Screens*/

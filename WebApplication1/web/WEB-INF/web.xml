@@ -32,6 +32,14 @@
         <servlet-name>Logout</servlet-name>
         <servlet-class>Logout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RemoveItem</servlet-name>
+        <servlet-class>controller.RemoveItem</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ValidateCheckout</servlet-name>
+        <servlet-class>controller.ValidateCheckout</servlet-class>       
+    </servlet>
     <servlet-mapping>
         <servlet-name>testServlet</servlet-name>
         <url-pattern>/testServlet</url-pattern>
@@ -63,6 +71,14 @@
     <servlet-mapping>
         <servlet-name>Logout</servlet-name>
         <url-pattern>/Logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveItem</servlet-name>
+        <url-pattern>/RemoveItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ValidateCheckout</servlet-name>
+        <url-pattern>/ValidateCheckout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

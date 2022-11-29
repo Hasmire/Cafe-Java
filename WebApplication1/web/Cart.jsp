@@ -49,14 +49,16 @@
             <div class="d-flex">
                 <img src="./img/CaffeMisto.jpg" class="img-fluid rounded-5 cart-img me-3" />
                 <div class="">
-                    <div class="mb-3 cart-title"><%out.println(x.getName());%></div>
-                    <div class="cart-remove">Remove</div>
+                    <div class="mb-3 cart-title"><%out.print(x.getName());%></div>
+                    <form action="RemoveItem" method="GET">
+                        <button class="btn cart-remove p-0" name="item_id" value="<%out.print(x.getId());%>">Remove</button>
+                    </form>
                 </div>
             </div>
         </div>
         <div class="col cart-price"><%out.println(x.getPrice());%></div>
         <div class="col-2 cart-price">
-            <input class="input-group-field cart-quant" type="number" name="quantity" value=<%out.println("\"" + quantity + "\"");%> />
+            <input class="input-group-field cart-quant" type="number" name="quantity" value=<%out.println("\"" + quantity + "\"");%> readonly />
         </div>
         <div class="col cart-price"><%out.println(itemPrice);%></div>
     </div>
