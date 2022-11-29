@@ -24,6 +24,10 @@
         <servlet-name>ClearCart</servlet-name>
         <servlet-class>controller.ClearCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>RemoveItem</servlet-name>
+        <servlet-class>controller.RemoveItem</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>testServlet</servlet-name>
         <url-pattern>/testServlet</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>ClearCart</servlet-name>
         <url-pattern>/ClearCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemoveItem</servlet-name>
+        <url-pattern>/RemoveItem</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

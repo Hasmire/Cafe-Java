@@ -227,6 +227,11 @@ a {
     font-size: 24px;
 }
 
+.cart-remove {
+    color: var(--text-color);
+    text-decoration: underline;
+}
+
 /*Checkout*/
 .checkout-title {
     font-size: 40px;
