@@ -39,10 +39,19 @@ public class AddToCart extends HttpServlet {
             } else {
                 //TODO: Prevent duplicates
                 itemList = existingList;
-                itemList.add(item);
-                response.sendRedirect("menu.jsp");
+                boolean exist = false;
+                for(Item x : itemList){
+                    if(x.getId()==id){
+                        exist = true;
+                        response.sendRedirect("duplicate-error.jsp");
+                    }
                 }
-            out.println(id);
+                if(!exist){
+                    itemList.add(item);
+                    response.sendRedirect("menu.jsp");
+                }
+                
+                }
             } 
         }
     
