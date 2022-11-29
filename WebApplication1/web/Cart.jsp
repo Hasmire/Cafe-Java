@@ -72,10 +72,14 @@
 
     <!--Checkout Button-->
     <div class="row mb-4 pt-4">
-        <div class="col-4"></div>
+        <div class="col-2"></div>      
         <div class="col"></div>
-        <div class="col-2"></div>
-        <div class="col">
+        <div class="col-2">
+            <form action="ClearCart" method="GET">
+                <button type="submit" class="btn btn-danger cart-checkout">Clear Cart</button>
+            </form>
+        </div>
+        <div class="col-2">         
             <a href="./checkout.jsp" type="button" class="btn btn-primary cart-checkout">Checkout</a>
         </div>
     </div>
