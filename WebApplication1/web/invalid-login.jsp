@@ -60,7 +60,7 @@
             <h2>Oops! Invalid Login.</h2>
             <h1>DRINK COFFEE</h1>
             <p>Please make sure to enter your correct email and password.</p>
-            <a href="login.jsp">Go back home</a>
+            <a href="login.jsp">Go Back</a>
         </div>
     </body>
 </html>
