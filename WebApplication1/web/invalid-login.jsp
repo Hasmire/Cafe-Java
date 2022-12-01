@@ -59,7 +59,7 @@
         <div class="container">
             <h2>Oops! Invalid Login.</h2>
             <h1>DRINK COFFEE</h1>
-            <p>Please make sure you entered the correct email and password.</p>
+            <p>Please make sure to enter your correct email and password.</p>
             <a href="login.jsp">Go back home</a>
         </div>
     </body>
