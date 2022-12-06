@@ -328,11 +328,6 @@ form .txt_field{
     color: var(--background-color);
 }
 
-/*Receipt*/
-.receipt-card {
-    background-color: var(--background-color2);
-}
-
 /*Smaller Screens*/
 @media screen and (max-width: 1024px) {
     .bg-img {

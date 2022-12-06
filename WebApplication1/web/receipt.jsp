@@ -15,12 +15,16 @@
 
 <!--Checkout Form-->
 <div class="container" style="max-width: 500px;">
-    <div class="card receipt-card mb-2">
+    <div class="card receipt-card mb-2" style="background-color: #302e2e">
         <div class="card-body mb-4">
             <div class="container">
                 <p class="mt-5 mb-5" style="font-size: 30px;">Thank for your purchase!</p>
                 <div class="row">
                     <%
+                        if (session.getAttribute("CartList") == null) {
+                            response.sendRedirect("invalid-checkout-empty.jsp");
+                            return;
+                        }
                         ArrayList<Item> itemList = (ArrayList<Item>) session.getAttribute("CartList");
                         int total = 0;
                         Iterator<Item> it = itemList.iterator();
