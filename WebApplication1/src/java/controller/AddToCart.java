@@ -13,29 +13,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
 import model.Item;
 
 public class AddToCart extends HttpServlet {
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {  
+        try ( PrintWriter out = response.getWriter()) {
 
-        //Create Item object from User request
-        int quantity = Integer.parseInt(request.getParameter("quantity"));
-        if (quantity == 0) {
-            response.sendRedirect("invalid-quantity.jsp");
-            return;
-        }
-        
-        int id = Integer.parseInt(request.getParameter("item_id"));
-        Item item = new Item(id);
-        item.setQuantity(quantity);
+            if (request.getSession().getAttribute("username") == null) {
+                response.sendRedirect("login.jsp");
+                return;
+            }
 
-        //Retrieve Cart items from session and add item to it
-        ArrayList<Item> itemList = new ArrayList<>();
-        HttpSession session = request.getSession();
-        ArrayList<Item> existingList = (ArrayList<Item>) session.getAttribute("CartList");
+            //Create Item object from User request
+            int quantity = Integer.parseInt(request.getParameter("quantity"));
+            if (quantity == 0) {
+                response.sendRedirect("invalid-quantity.jsp");
+                return;
+            }
+
+            int id = Integer.parseInt(request.getParameter("item_id"));
+            Item item = new Item(id);
+            item.setQuantity(quantity);
+
+            //Retrieve Cart items from session and add item to it
+            ArrayList<Item> itemList = new ArrayList<>();
+            HttpSession session = request.getSession();
+            ArrayList<Item> existingList = (ArrayList<Item>) session.getAttribute("CartList");
 
             if (existingList == null) {
                 itemList.add(item);
@@ -45,22 +52,21 @@ public class AddToCart extends HttpServlet {
                 //Allows duplicates
                 itemList = existingList;
                 boolean exist = false;
-                for(Item x : itemList){
-                    if(x.getId()==id){
+                for (Item x : itemList) {
+                    if (x.getId() == id) {
                         exist = true;
                         x.setQuantity(x.getQuantity() + quantity);
                         response.sendRedirect("menu.jsp");
                     }
                 }
-                if(!exist){
+                if (!exist) {
                     itemList.add(item);
                     response.sendRedirect("menu.jsp");
                 }
-                
-                }
-            } 
+
+            }
         }
-    
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -102,4 +108,3 @@ public class AddToCart extends HttpServlet {
     }// </editor-fold>
 
 }
-
