@@ -50,7 +50,7 @@
                                                 <i class="fa fa-plus quant-icon" aria-hidden="true"></i>
                                             </button>
                                         </div>
-                                        <input class="input-group-field" type="number" name="quantity" value="1" />
+                                        <input class="input-group-field" type="number" name="quantity" value="0" />
                                         <div class="input-group-button">
                                             <button type="button" class="btn quant-btn" data-quantity="minus"
                                                     data-field="quantity">

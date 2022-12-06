@@ -34,7 +34,7 @@ public class ValidateCheckout extends HttpServlet {
             HttpSession session = request.getSession();
 
             if (session.getAttribute("CartList") == null) {
-                response.sendRedirect("empty-cart-error.jsp");
+                response.sendRedirect("invalid-checkout-empty.jsp");
                 return;
             }
 
@@ -48,7 +48,7 @@ public class ValidateCheckout extends HttpServlet {
             }
 
             if (flag) {
-                response.sendRedirect("insufficient-information-error.jsp");
+                response.sendRedirect("invalid-checkout-info.jsp");
                 return;
             } else {
                 response.sendRedirect("receipt.jsp");

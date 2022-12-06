@@ -23,6 +23,11 @@ public class AddToCart extends HttpServlet {
 
         //Create Item object from User request
         int quantity = Integer.parseInt(request.getParameter("quantity"));
+        if (quantity == 0) {
+            response.sendRedirect("invalid-quantity.jsp");
+            return;
+        }
+        
         int id = Integer.parseInt(request.getParameter("item_id"));
         Item item = new Item(id);
         item.setQuantity(quantity);

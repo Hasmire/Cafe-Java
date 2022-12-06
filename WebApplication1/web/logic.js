@@ -15,10 +15,10 @@ $(document).ready(function () {
         e.preventDefault();
         fieldName = $(this).attr("data-field");
         var currentVal = parseInt($("input[name=" + fieldName + "]").val());
-        if (!isNaN(currentVal) && currentVal > 1) {
+        if (!isNaN(currentVal) && currentVal > 0) {
             $("input[name=" + fieldName + "]").val(currentVal - 1);
         } else {
-            $("input[name=" + fieldName + "]").val(1);
+            $("input[name=" + fieldName + "]").val(0);
         }
     });
 });
