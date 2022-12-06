@@ -1,11 +1,14 @@
 <%-- 
-    Document   : navbar
-    Created on : 11 26, 22, 5:22:34 AM
-    Author     : Jay
+    Document   : index
+    Created on : 11 17, 22, 7:47:16 AM
+    Author     : Hasmire
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%@include file="components/head.jsp"%>
+
 <nav class="navbar sticky-top navbar-expand-lg p-3 mb-3">
     <div class="container">
         <!--Left Nav-->
@@ -32,7 +35,7 @@
                 <a href="./menu.jsp" class="nav-a">Menu</a>
                 <a href="./Cart.jsp" class="nav-a">Cart</a>
                 <form action="Logout">
-                <Button type="submit" class="btn btn-primary" value="Logout">
+                <Button type="submit" class="btn btn-primary" value="Login">
                     <c:choose>
                         <c:when test= "${sessionScope.username==null}">
                             Login
@@ -47,3 +50,15 @@
         </div>
     </div>
 </nav>
+
+<!--Background Image-->
+<img src="./img/CafeBackground.jpg" class="bg-img" />
+
+<!--Index Body-->
+<div class="container d-flex flex-column index">
+    <span class="index-title ms-3 mb-4">Error.</span>
+    <span class="index-sub ms-3 mb-5">Attempted to checkout with insufficient information.</span>
+    <a href="./checkout.jsp" type="button" class="btn btn-primary ms-3">Go back</a>
+</div>
+
+<%@include file="components/footer.jsp"%>

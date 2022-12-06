@@ -3,6 +3,7 @@
     Created on : 11 17, 22, 7:47:16 AM
     Author     : Hasmire
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -34,7 +35,16 @@
                 <a href="./menu.jsp" class="nav-a">Menu</a>
                 <a href="./Cart.jsp" class="nav-a">Cart</a>
                 <form action="Logout">
-                <Button type="submit" class="btn btn-primary" value="Login">Login</button>
+                <Button type="submit" class="btn btn-primary" value="Login">
+                    <c:choose>
+                        <c:when test= "${sessionScope.username==null}">
+                            Login
+                        </c:when>
+                        <c:otherwise>
+                            Logout
+                        </c:otherwise>
+                    </c:choose>
+                </button>
                 </form>
             </div>
         </div>

@@ -69,7 +69,7 @@ public class Login extends HttpServlet {
             session.setAttribute("username", uname);
             response.sendRedirect("menu.jsp");
         } else {
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("invalid-login.jsp");
         }
     }
 
