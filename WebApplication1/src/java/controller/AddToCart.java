@@ -23,10 +23,10 @@ public class AddToCart extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try ( PrintWriter out = response.getWriter()) {
 
-            if (request.getSession().getAttribute("username") == null) {
+            /*if (request.getSession().getAttribute("username") == null) {
                 response.sendRedirect("login.jsp");
                 return;
-            }
+            }*/
 
             //Create Item object from User request
             int quantity = Integer.parseInt(request.getParameter("quantity"));

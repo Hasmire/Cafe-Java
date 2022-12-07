@@ -67,7 +67,7 @@ public class Login extends HttpServlet {
         if (uname.equals("user")&&pass.equals("pass1")) {
             HttpSession session = request.getSession();
             session.setAttribute("username", uname);
-            response.sendRedirect("menu.jsp");
+            response.sendRedirect("Cart.jsp");
         } else {
             response.sendRedirect("invalid-login.jsp");
         }
